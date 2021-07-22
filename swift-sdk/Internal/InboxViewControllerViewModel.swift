@@ -14,6 +14,7 @@ enum RowDiff {
     case sectionUpdate(IndexSet)
 }
 
+@available(iOSApplicationExtension, unavailable)
 class InboxViewControllerViewModel: InboxViewControllerViewModelProtocol {
     init(internalAPIProvider: @escaping @autoclosure () -> InternalIterableAPI? = IterableAPI.internalImplementation) {
         ITBInfo()

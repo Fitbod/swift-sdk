@@ -12,6 +12,7 @@ struct DeviceMetadata: Codable {
 
 // MARK: - API CLIENT FUNCTIONS
 
+@available(iOSApplicationExtension, unavailable)
 class ApiClient {
     init(apiKey: String,
          authProvider: AuthProvider?,
@@ -94,6 +95,7 @@ class ApiClient {
 
 // MARK: - API REQUEST CALLS
 
+@available(iOSApplicationExtension, unavailable)
 extension ApiClient: ApiClientProtocol {
     func register(registerTokenInfo: RegisterTokenInfo, notificationsEnabled: Bool) -> Future<SendRequestValue, SendRequestError> {
         let result = createRequestCreator().flatMap { $0.createRegisterTokenRequest(registerTokenInfo: registerTokenInfo,

@@ -29,6 +29,7 @@ protocol HealthMonitorDelegate: AnyObject {
     func onDBError()
 }
 
+@available(iOSApplicationExtension, unavailable)
 class HealthMonitor {
     init(dataProvider: HealthMonitorDataProviderProtocol,
          dateProvider: DateProviderProtocol,

@@ -4,6 +4,7 @@
 
 import Foundation
 
+@available(iOSApplicationExtension, unavailable)
 class InboxSessionManager {
     struct SessionInfo {
         let startInfo: SessionStartInfo

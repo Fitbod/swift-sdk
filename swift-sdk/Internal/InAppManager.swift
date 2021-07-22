@@ -9,6 +9,7 @@ protocol InAppDisplayChecker {
     func isOkToShowNow(message: IterableInAppMessage) -> Bool
 }
 
+@available(iOSApplicationExtension, unavailable)
 protocol IterableInternalInAppManagerProtocol: IterableInAppManagerProtocol, InAppNotifiable, InAppDisplayChecker {
     func start() -> Future<Bool, Error>
     
@@ -26,6 +27,7 @@ protocol IterableInternalInAppManagerProtocol: IterableInAppManagerProtocol, InA
     func remove(message: IterableInAppMessage, location: InAppLocation, source: InAppDeleteSource, inboxSessionId: String?)
 }
 
+@available(iOSApplicationExtension, unavailable)
 class InAppManager: NSObject, IterableInternalInAppManagerProtocol {
     init(requestHandler: RequestHandlerProtocol,
          deviceMetadata: DeviceMetadata,
@@ -559,6 +561,7 @@ class InAppManager: NSObject, IterableInternalInAppManagerProtocol {
     private var autoDisplayPaused = false
 }
 
+@available(iOSApplicationExtension, unavailable)
 extension InAppManager: InAppNotifiable {
     func scheduleSync() -> Future<Bool, Error> {
         ITBInfo()
@@ -632,6 +635,7 @@ extension InAppManager: InAppNotifiable {
     }
 }
 
+@available(iOSApplicationExtension, unavailable)
 extension InAppManager: InAppDisplayChecker {
     func isOkToShowNow(message: IterableInAppMessage) -> Bool {
         guard !isAutoDisplayPaused else {
